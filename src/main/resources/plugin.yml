@@ -1,0 +1,5 @@
+name: Rustplugin
+version: ${project.version}
+main: teamif.rustplugin.Rustplugin
+api-version: 1.13
+authors: [Team_IF]

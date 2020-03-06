@@ -8,9 +8,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import java.lang.reflect.InvocationTargetException;
 
 public class PlayerJoinListener implements Listener {
-    private static void addChannel(Player p, String channel) {
+    private static void addChannel(Player p) {
         try {
-            p.getClass().getMethod("addChannel", String.class).invoke(p, channel);
+            p.getClass().getMethod("addChannel", String.class).invoke(p, "MC|Brand");
         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException
                 | SecurityException e) {
             e.printStackTrace();
@@ -18,6 +18,6 @@ public class PlayerJoinListener implements Listener {
     }
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        addChannel(event.getPlayer(), "MC|Brand");
+        addChannel(event.getPlayer());
     }
 }
